@@ -26,12 +26,16 @@ jobs:
       - uses: actions/checkout@v3
 
       # Build All
-      #    cd docker
-      #    .\docker_image_build.bat
-      #    cd ..
       - name: Build All
         run: |
+          cd docker
+          .\docker_image_build.bat
+          cd ..
           echo "# windows-docker" >> test.md
+          echo ${{github.workspace}}
+          docker run -d -v ${{ github.workspace }}:c:\replique_windows_java --name replique windows/replique
+          docker ps -a
+          docker exec replique "dir"
 
       - name: Create a file
         run: echo "I won't live long" > my_file.txt
