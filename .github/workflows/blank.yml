@@ -30,3 +30,10 @@ jobs:
         run: |
           cd docker
           .\docker_image_build.bat
+          cd ..
+          echo "# windows-docker" >> test.md
+
+      - uses: actions/upload-artifact@v3
+      with:
+        name: demo-artifact
+        path: test.md
