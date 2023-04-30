@@ -40,5 +40,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: my-artifact
-          path: my_file.txt
-          retention-days: 5
+          path: app\terminator_1.jpg
