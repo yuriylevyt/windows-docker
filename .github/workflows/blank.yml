@@ -29,4 +29,4 @@ jobs:
       - name: Build All
         run: |
           cd docker
-          docker_image_build.bat
+          .\docker_image_build.bat
